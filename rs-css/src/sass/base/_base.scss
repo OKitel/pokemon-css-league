@@ -1,0 +1,14 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  @extend %font-prim;
+  @include font($size: 1.6rem, $height: 2.6rem, $weight: normal);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}

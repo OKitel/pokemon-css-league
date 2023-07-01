@@ -1,0 +1,10 @@
+@mixin font ($size, $height: $size, $weight: bold, $style: normal) {
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  line-height: $height;
+}
+
+@mixin gridSize($size) {
+  grid-template-columns: repeat($size, 3rem);
+}
