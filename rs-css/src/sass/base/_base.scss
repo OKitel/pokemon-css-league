@@ -12,3 +12,17 @@ body {
   flex-direction: column;
   height: 100vh;
 }
+
+#root {
+  background-color: $color-sky;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+
+  background-image: url('../assets/landscape.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,18 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.pokemons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.editor {
+  width: 60%;
+  height: 50rem;
+}
