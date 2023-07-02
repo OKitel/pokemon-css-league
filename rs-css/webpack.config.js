@@ -14,13 +14,7 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                },
-            },
+            { test: /\.ts$/i, use: 'ts-loader' },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
@@ -36,11 +30,11 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.js', '.ts'],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Minesweeper',
+            title: 'Pokemon CSS League',
             template: './src/index.html',
         }),
         new MiniCssExtractPlugin({
