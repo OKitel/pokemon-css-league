@@ -1,0 +1,23 @@
+.editor {
+  display: flex;
+  flex-wrap: no-wrap;
+  min-width: 60%;
+
+  &__header {
+    background-color: $color-light;
+    margin: 0;
+    text-align: center;
+    color: $color-dark;
+  }
+}
+
+#css-editor,
+#html-viewer {
+  flex: 1 1 50%;
+}
+
+.cm-editor {
+  background-color: $color-light;
+  width: 100%;
+  height: 40rem;
+}

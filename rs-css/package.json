@@ -42,6 +42,10 @@
     "author": "Olga Kitel",
     "license": "ISC",
     "dependencies": {
+        "@codemirror/lang-css": "^6.2.0",
+        "@codemirror/lang-html": "^6.4.5",
+        "@codemirror/state": "^6.2.1",
+        "codemirror": "^6.0.1",
         "normalize.css": "^8.0.1"
     }
 }

@@ -5,6 +5,10 @@
   flex-grow: 1;
 }
 
+.task-title {
+  font-size: 7rem;
+}
+
 .pokemons {
   display: flex;
   justify-content: space-around;
@@ -12,7 +16,6 @@
   padding: 2rem 0;
 }
 
-.editor {
-  width: 60%;
-  height: 50rem;
+.pokemon {
+  width: 15rem;
 }

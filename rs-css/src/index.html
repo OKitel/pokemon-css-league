@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css">
     <title>RS CSS</title>
   </head>
 
@@ -21,9 +22,17 @@
       </header>
       <div class="background">
         <main class="main">
+          <h2 class="task-title">Select Pikachu</h2>
           <div class="pokemons">
           </div>
-          <div class="editor"></div>
+          <div class="editor">
+            <div id="css-editor">
+              <h3 class="editor__header">CSS Editor</h3>
+            </div>
+            <div id="html-viewer">
+              <h3 class="editor__header">HTML Viewer</h3>
+            </div>
+          </div>
         </main>
         <footer class="footer">
           <a class="footer__link" target="_blank" href="https://github.com/OKitel">
