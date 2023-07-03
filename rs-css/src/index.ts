@@ -4,8 +4,8 @@ import bulbasaurImage from './assets/bulbasaur.png';
 import pikachuImage from './assets/pikachu.png';
 import squirtleImage from './assets/squirtle.png';
 import { initCssEditor, initHtmlEditor } from './scripts/editor';
-
-console.log(charmanderImage);
+import initMenu from './scripts/menu';
+import initModal from './scripts/modal';
 
 const pokemonsField = document.querySelector('.pokemons');
 const charmander = document.createElement('img');
@@ -36,3 +36,6 @@ if (editorField) {
     const htmlViewerField = document.getElementById('html-viewer');
     if (htmlViewerField) initHtmlEditor(htmlViewerField);
 }
+
+initMenu();
+initModal();
