@@ -1,14 +1,26 @@
 import { EditorView, basicSetup } from 'codemirror';
+import { placeholder, keymap } from '@codemirror/view';
 import { css } from '@codemirror/lang-css';
 import { html } from '@codemirror/lang-html';
+import { checkAnswer } from './level';
+
+const handleSubmit = (target: EditorView): boolean => {
+    const userAnswer = target.state.doc.toString();
+    checkAnswer(userAnswer);
+    return true;
+};
+
+const keysMap = keymap.of([
+    {
+        key: 'Enter',
+        run: handleSubmit,
+        preventDefault: true,
+    },
+]);
 
 export const initCssEditor = (parent: HTMLElement): void => {
     const view = new EditorView({
-        doc: `Type your css here...
-{
-  /* Styles would go here. */
-}`,
-        extensions: [basicSetup, css()],
+        extensions: [keysMap, basicSetup, css(), placeholder(`Type your css here and hit Enter...`)],
         parent,
     });
 };

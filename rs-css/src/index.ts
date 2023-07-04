@@ -1,42 +1,13 @@
 import './sass/styles.scss';
-import { Level, LevelJson } from './types/level';
+import { Level } from './types/level';
 import Pokemon from './types/pokemon';
-import { Answer } from './types/answer';
 import { initCssEditor, initHtmlEditor } from './scripts/editor';
 import initMenu from './scripts/menu';
 import initModal from './scripts/modal';
-import * as dataBase from './levels.json';
-import { getPokemonsByIds } from './repo/pokemonRepository';
 import createHeader from './scripts/header';
 import createFooter from './scripts/footer';
 import createMain from './scripts/main';
-
-interface LevelsData {
-    levels: LevelJson[];
-}
-
-alert(
-    'Уважаемые проверяющие! Я еще активно доделываю работу, поэтому буду очень признателна, если вы проверите мою работу не ранее 05.07.2023'
-);
-
-const jsonData = dataBase as LevelsData;
-
-const createLevels = (data: LevelsData): Level[] => {
-    return data.levels.map((level) => {
-        const pokemonsters: Pokemon[] = getPokemonsByIds(level.pokemons);
-        const corAns: Answer[] = level.correctAnswers.map(({ css, pokemons }) => ({
-            css,
-            pokemons: getPokemonsByIds(pokemons),
-        }));
-        const wrongAns: Answer[] | undefined = level.wrongAnswers?.map(({ css, pokemons }) => ({
-            css,
-            pokemons: getPokemonsByIds(pokemons),
-        }));
-        return { ...level, pokemons: pokemonsters, correctAnswers: corAns, wrongAnswers: wrongAns };
-    });
-};
-
-const levels = createLevels(jsonData);
+import { getCurrentLevel } from './scripts/level';
 
 const createView = (): void => {
     const root = document.getElementById('root');
@@ -110,4 +81,6 @@ const render = (level: Level): void => {
     renderPokemons(level);
 };
 
-render(levels[0]);
+const currentLevel = getCurrentLevel();
+
+render(currentLevel);
