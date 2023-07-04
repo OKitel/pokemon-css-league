@@ -1,4 +1,44 @@
+const createMenu = (): HTMLElement => {
+    const overlayDiv = document.createElement('div');
+    overlayDiv.className = 'overlay';
+    const menuContainerDiv = document.createElement('div');
+    menuContainerDiv.className = 'menu-container';
+    const nav = document.createElement('nav');
+    const h3 = document.createElement('h3');
+    h3.textContent = 'Choose a level';
+    const ul = document.createElement('ul');
+    ul.className = 'nav-links menu';
+    const levelNames = [
+        'Level 1',
+        'Level 2',
+        'Level 3',
+        'Level 4',
+        'Level 5',
+        'Level 6',
+        'Level 7',
+        'Level 8',
+        'Level 9',
+        'Level 10',
+    ];
+    levelNames.forEach((levelName) => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.className = 'nav-links__item';
+        a.textContent = levelName;
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+    nav.appendChild(h3);
+    nav.appendChild(ul);
+    menuContainerDiv.appendChild(nav);
+    overlayDiv.appendChild(menuContainerDiv);
+    return overlayDiv;
+};
+
+// eslint-disable-next-line max-lines-per-function
 const initMenu = (): void => {
+    const root = document.getElementById('root');
+    if (root) root.appendChild(createMenu());
     const { body } = document;
     const adaptMenu = document.querySelector('.menu-container');
     const overlay = document.querySelector('.overlay') as HTMLDivElement;
