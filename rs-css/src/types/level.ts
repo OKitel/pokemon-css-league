@@ -1,5 +1,5 @@
-import { Answer } from './answer';
-import { Pokemon } from './pokemon';
+import { Answer, AnswerJson } from './answer';
+import Pokemon from './pokemon';
 
 export interface Level {
     html: string;
@@ -9,5 +9,16 @@ export interface Level {
     correctAnswers: Answer[];
     help?: string;
     wrongAnswers?: Answer[];
+    done: boolean;
+}
+
+export interface LevelJson {
+    html: string;
+    title: string;
+    menuTitle: string;
+    pokemons: number[];
+    correctAnswers: AnswerJson[];
+    wrongAnswers?: AnswerJson[];
+    help?: string;
     done: boolean;
 }
