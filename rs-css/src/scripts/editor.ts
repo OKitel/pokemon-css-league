@@ -4,23 +4,18 @@ import { html } from '@codemirror/lang-html';
 
 export const initCssEditor = (parent: HTMLElement): void => {
     const view = new EditorView({
-        doc: 'Type your css here...',
+        doc: `Type your css here...
+{
+  /* Styles would go here. */
+}`,
         extensions: [basicSetup, css()],
         parent,
     });
 };
 
-const starHtmltState = `
-  <div class="pokemons">
-    <img class='charmander' />
-    <img class='bulbasaur' />
-    <img class='squirtle' />
-    <img class='pikachu' />
-  </div>
-  `;
-export const initHtmlEditor = (parent: HTMLElement): void => {
+export const initHtmlEditor = (parent: HTMLElement, htmlDescription: string): void => {
     const view = new EditorView({
-        doc: starHtmltState,
+        doc: htmlDescription,
         extensions: [basicSetup, html()],
         parent,
     });
