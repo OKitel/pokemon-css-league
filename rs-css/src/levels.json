@@ -1,0 +1,12 @@
+{
+    "levels": [
+        {
+            "html": "<div class=\"pokemons\">\n    <pikachu />\n</div>",
+            "title": "Catch Pikachu",
+            "menuTitle": "I choose you",
+            "pokemons": [1],
+            "correctAnswers": [{ "css": "pikachu", "pokemons": [1] }],
+            "done": false
+        }
+    ]
+}
