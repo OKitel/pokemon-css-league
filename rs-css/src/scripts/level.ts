@@ -50,7 +50,7 @@ const setNextLevel = (): void => {
 export const checkAnswer = (answer: string): boolean => {
     const level: Level = getCurrentLevel();
     const { correctAnswers } = level;
-    const match = correctAnswers.find((ans) => ans.css === answer);
+    const match = correctAnswers.find((ans) => ans.css === answer.trim());
     const catchedPokemons = match?.pokemons;
     // const vanishedPokemons = level.pokemons.filter((pokemon) => !catchedPokemons?.includes(pokemon));
     // TODO animation for catched and vanished pokemons

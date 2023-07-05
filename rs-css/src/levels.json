@@ -75,7 +75,10 @@
             "title": "Catch first pokemon",
             "menuTitle": "9. Cath first",
             "pokemons": [2, 3, 4],
-            "correctAnswers": [{ "css": "pokemons:first-child", "pokemons": [2] }],
+            "correctAnswers": [
+                { "css": "pokemons:first-child", "pokemons": [2] },
+                { "css": "bulbasaur", "pokemons": [2] }
+            ],
             "done": false
         },
         {
@@ -83,7 +86,10 @@
             "title": "Catch last pokemon",
             "menuTitle": "10. Catch lasts",
             "pokemons": [4, 3, 2, 1],
-            "correctAnswers": [{ "css": "pokemons:last-child", "pokemons": [1] }],
+            "correctAnswers": [
+                { "css": "pokemons:last-child", "pokemons": [1] },
+                { "css": "pikachu", "pokemons": [1] }
+            ],
             "done": false
         }
     ]
