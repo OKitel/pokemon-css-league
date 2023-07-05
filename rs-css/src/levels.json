@@ -21,13 +21,16 @@
             "title": "Catch Shiny Charmander",
             "menuTitle": "3. Shiny Charmander",
             "pokemons": [3, 2, 6, 1],
-            "correctAnswers": [{ "css": "#shiny", "pokemons": [6] }],
+            "correctAnswers": [
+                { "css": "#shiny", "pokemons": [6] },
+                { "css": "charmander#shiny", "pokemons": [6] }
+            ],
             "done": false
         },
         {
             "html": "<div class=\"pokemons\">\n    <pikachu />\n    <charmander />\n    <pikachu />\n</div>",
             "title": "Catch 2 Pikachu",
-            "menuTitle": "4. Catch more Pikachu",
+            "menuTitle": "4. Catch 8777 Pikachu",
             "pokemons": [1, 3, 1],
             "correctAnswers": [{ "css": "pikachu", "pokemons": [1] }],
             "done": false
