@@ -40,6 +40,9 @@ const createModal = (): HTMLElement => {
     const modalBtn = document.createElement('button');
     modalBtn.className = 'modal-btn';
     modalBtn.textContent = 'Start your adventure now!';
+    modalBtn.addEventListener('click', () => {
+        localStorage.setItem('start', 'read');
+    });
     modalBtnContainerDiv.appendChild(modalBtn);
     modalContentInfoDiv.appendChild(modalContentInfoTitle);
     modalContentInfoDiv.appendChild(modalContentInfoText1);

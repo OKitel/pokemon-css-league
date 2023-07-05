@@ -29,7 +29,9 @@ const createView = (): void => {
     }
 
     initMenu();
-    initModal();
+    if (localStorage.getItem('start') !== 'read') {
+        initModal();
+    }
 };
 
 createView();
