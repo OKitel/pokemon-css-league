@@ -56,7 +56,24 @@ const tinyBulbasaur = new Pokemon({
     attrClass: 'tiny',
 });
 
-const dataBase = [pikachu, bulbasaur, charmander, squirtle, lapras, shinyCharmander, cagedPikachu, tinyBulbasaur];
+const tinyCharmander = new Pokemon({
+    id: 9,
+    name: 'charmander',
+    src: charmanderImage as string,
+    attrClass: 'tiny',
+});
+
+const dataBase = [
+    pikachu,
+    bulbasaur,
+    charmander,
+    squirtle,
+    lapras,
+    shinyCharmander,
+    cagedPikachu,
+    tinyBulbasaur,
+    tinyCharmander,
+];
 
 export const getPokemonById = (id: number): Pokemon | undefined => {
     return dataBase.find((pokemon) => pokemon.id === id);

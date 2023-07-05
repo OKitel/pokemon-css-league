@@ -49,9 +49,9 @@ const renderPokemons = (level: Level): void => {
 
             if (correctPokemonIds.includes(p.id)) {
                 pImg.classList.add('active-image');
-                if (p.attrClass) {
-                    pImg.classList.add('tiny');
-                }
+            }
+            if (p.attrClass) {
+                pImg.classList.add('tiny');
             }
             pokemonsField.appendChild(pImg);
         });
