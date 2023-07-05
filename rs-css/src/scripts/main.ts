@@ -21,7 +21,11 @@ const createMain = (): HTMLElement => {
     htmlViewerHeader.className = 'editor__header';
     htmlViewerHeader.textContent = 'HTML Viewer';
 
+    const htmlViewerContainer = document.createElement('div');
+    htmlViewerContainer.className = 'html-viewer__container';
+
     htmlViewerDiv.appendChild(htmlViewerHeader);
+    htmlViewerDiv.appendChild(htmlViewerContainer);
 
     editorDiv.appendChild(cssEditorDiv);
     editorDiv.appendChild(htmlViewerDiv);

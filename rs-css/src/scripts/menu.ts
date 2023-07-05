@@ -1,3 +1,5 @@
+import { levels, setLevel } from './level';
+
 const createMenu = (): HTMLElement => {
     const overlayDiv = document.createElement('div');
     overlayDiv.className = 'overlay';
@@ -8,23 +10,15 @@ const createMenu = (): HTMLElement => {
     h3.textContent = 'Choose a level';
     const ul = document.createElement('ul');
     ul.className = 'nav-links menu';
-    const levelNames = [
-        'Level 1',
-        'Level 2',
-        'Level 3',
-        'Level 4',
-        'Level 5',
-        'Level 6',
-        'Level 7',
-        'Level 8',
-        'Level 9',
-        'Level 10',
-    ];
-    levelNames.forEach((levelName) => {
+
+    levels.forEach(({ menuTitle }, index) => {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.className = 'nav-links__item';
-        a.textContent = levelName;
+        a.textContent = menuTitle;
+        a.addEventListener('click', () => {
+            setLevel(index);
+        });
         li.appendChild(a);
         ul.appendChild(li);
     });

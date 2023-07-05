@@ -7,6 +7,14 @@
             "pokemons": [1],
             "correctAnswers": [{ "css": "pikachu", "pokemons": [1] }],
             "done": false
+        },
+        {
+            "html": "<div class=\"pokemons\">\n    <pikachu />\n    <charmander />\n    <pikachu />\n</div>",
+            "title": "Catch 2 Pikachu",
+            "menuTitle": "Catch more Pikachu",
+            "pokemons": [1, 3, 1],
+            "correctAnswers": [{ "css": "pikachu", "pokemons": [1] }],
+            "done": false
         }
     ]
 }

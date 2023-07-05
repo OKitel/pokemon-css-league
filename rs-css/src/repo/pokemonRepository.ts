@@ -2,6 +2,7 @@ import charmanderImage from '../assets/charmander.png';
 import bulbasaurImage from '../assets/bulbasaur.png';
 import pikachuImage from '../assets/pikachu.png';
 import squirtleImage from '../assets/squirtle.png';
+import laprasImage from '../assets/lapras.png';
 import Pokemon from '../types/pokemon';
 
 const pikachu = new Pokemon({
@@ -28,12 +29,23 @@ const squirtle = new Pokemon({
     src: squirtleImage as string,
 });
 
-const dataBase = [pikachu, bulbasaur, charmander, squirtle];
+const lapras = new Pokemon({
+    id: 5,
+    name: 'lapras',
+    src: laprasImage as string,
+});
+
+const dataBase = [pikachu, bulbasaur, charmander, squirtle, lapras];
 
 export const getPokemonById = (id: number): Pokemon | undefined => {
     return dataBase.find((pokemon) => pokemon.id === id);
 };
 
 export const getPokemonsByIds = (ids: number[]): Pokemon[] => {
-    return dataBase.filter((pokemon) => ids.includes(pokemon.id));
+    const pokemons: Pokemon[] = [];
+    ids.forEach((id) => {
+        const pokemon = getPokemonById(id);
+        if (pokemon) pokemons.push(pokemon);
+    });
+    return pokemons;
 };
