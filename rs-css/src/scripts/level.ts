@@ -4,6 +4,7 @@ import { Answer } from '../types/answer';
 import Pokemon from '../types/pokemon';
 import * as dataBase from '../levels.json';
 import render from './render';
+import createPokeball from './pokeball';
 
 const jsonData = dataBase as LevelsData;
 
@@ -53,9 +54,19 @@ export const checkAnswer = (answer: string): boolean => {
     const match = correctAnswers.find((ans) => ans.css === answer.trim());
     const catchedPokemons = match?.pokemons;
     // const vanishedPokemons = level.pokemons.filter((pokemon) => !catchedPokemons?.includes(pokemon));
-    // TODO animation for catched and vanished pokemons
+    // TODO animation for vanished pokemons
     if (catchedPokemons) {
-        setNextLevel();
+        const activeImages = document.querySelectorAll('.active-image');
+        activeImages.forEach((img) => {
+            if (img) {
+                const parent = img.parentElement;
+                const pokeball = createPokeball();
+                if (parent) {
+                    parent.replaceChild(pokeball, img);
+                }
+            }
+        });
+        setTimeout(() => setNextLevel(), 4000);
         return true;
     }
     return false;
