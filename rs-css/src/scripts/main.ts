@@ -1,22 +1,20 @@
 const createMain = (): HTMLElement => {
     const main = document.createElement('main');
     main.className = 'main';
-
     const editorDiv = document.createElement('div');
     editorDiv.className = 'editor';
-
     const cssEditorDiv = document.createElement('div');
     cssEditorDiv.id = 'css-editor';
-
     const cssEditorHeader = document.createElement('h3');
     cssEditorHeader.className = 'editor__header';
     cssEditorHeader.textContent = 'CSS Editor';
-
+    const cssViewerContainer = document.createElement('div');
+    cssViewerContainer.className = 'css-viewer__container';
     cssEditorDiv.appendChild(cssEditorHeader);
+    cssEditorDiv.appendChild(cssViewerContainer);
 
     const htmlViewerDiv = document.createElement('div');
     htmlViewerDiv.id = 'html-viewer';
-
     const htmlViewerHeader = document.createElement('h3');
     htmlViewerHeader.className = 'editor__header';
     htmlViewerHeader.textContent = 'HTML Viewer';

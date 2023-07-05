@@ -1,5 +1,4 @@
 import './sass/styles.scss';
-import { initCssEditor } from './scripts/editor';
 import initMenu from './scripts/menu';
 import initModal from './scripts/modal';
 import createHeader from './scripts/header';
@@ -34,12 +33,6 @@ const createView = (): void => {
 };
 
 createView();
-
-const editorField = document.querySelector<HTMLElement>('.editor');
-if (editorField) {
-    const cssEditorField = document.getElementById('css-editor');
-    if (cssEditorField) initCssEditor(cssEditorField);
-}
 
 const currentLevel = getCurrentLevel();
 

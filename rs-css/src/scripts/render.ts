@@ -1,6 +1,6 @@
 import { Level } from '../types/level';
 import Pokemon from '../types/pokemon';
-import { initHtmlEditor } from './editor';
+import { initCssEditor, initHtmlEditor } from './editor';
 
 const renderTitle = (level: Level): void => {
     const title = document.querySelector('.task-title');
@@ -17,6 +17,17 @@ const renderTitle = (level: Level): void => {
     }
 };
 
+const renderCssViewer = (): void => {
+    const editorField = document.querySelector<HTMLElement>('.editor');
+    if (editorField) {
+        const cssEditorField = document.querySelector('.css-viewer__container');
+        if (cssEditorField instanceof HTMLElement) {
+            cssEditorField.innerHTML = '';
+            initCssEditor(cssEditorField);
+        }
+    }
+};
+
 const renderHtmlViewer = (level: Level): void => {
     const htmlViewerField = document.querySelector('.html-viewer__container');
     if (htmlViewerField instanceof HTMLElement) {
@@ -28,11 +39,9 @@ const renderHtmlViewer = (level: Level): void => {
 const renderPokemons = (level: Level): void => {
     const pokemonsField = document.querySelector('.pokemons');
     const correctPokemonIds = level.correctAnswers.flatMap((ans) => ans.pokemons.map((p) => p.id));
-    console.log(correctPokemonIds, 'correct');
     if (pokemonsField) {
         pokemonsField.innerHTML = '';
         const { pokemons } = level;
-        console.log(level, 'level', pokemons, 'pokemons');
         pokemons.forEach((p: Pokemon) => {
             const pImg = document.createElement('img');
             pImg.src = p.src;
@@ -48,6 +57,7 @@ const renderPokemons = (level: Level): void => {
 
 const render = (level: Level): void => {
     renderTitle(level);
+    renderCssViewer();
     renderHtmlViewer(level);
     renderPokemons(level);
 };
