@@ -1,6 +1,7 @@
 import { Level } from '../types/level';
 import Pokemon from '../types/pokemon';
 import { initCssEditor, initHtmlEditor } from './editor';
+import { createUl } from './menu';
 
 const renderTitle = (level: Level): void => {
     const title = document.querySelector('.task-title');
@@ -58,11 +59,31 @@ const renderPokemons = (level: Level): void => {
     }
 };
 
+const renderMenu = (): void => {
+    const navLinks = document.querySelector('.nav-links');
+    const ul = createUl();
+    if (navLinks) {
+        const parent = navLinks.parentElement;
+        if (parent) {
+            parent.replaceChild(ul, navLinks);
+        }
+    }
+    const menuLinks = document.querySelectorAll('.nav-links__item');
+    if (menuLinks) {
+        menuLinks.forEach((link) => {
+            link.classList.remove('nav-links__item-active');
+        });
+        const currentLevel = localStorage.getItem('level') || '0';
+        menuLinks[+currentLevel].classList.add('nav-links__item-active');
+    }
+};
+
 const render = (level: Level): void => {
     renderTitle(level);
     renderCssViewer();
     renderHtmlViewer(level);
     renderPokemons(level);
+    renderMenu();
 };
 
 export default render;

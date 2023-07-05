@@ -54,7 +54,8 @@
 
 .menu-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   width: 25rem;
   height: 100%;
@@ -100,4 +101,20 @@
 
 .menu-title {
   text-align: center;
+}
+
+.reset-btn {
+  width: 15rem;
+  height: 4rem;
+  border: 2px solid $color-dark;
+  border-radius: 1rem;
+  background-color: transparent;
+  @extend %transition;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.reset-btn:hover {
+  background-color: $color-dark;
+  color: $color-light;
 }
