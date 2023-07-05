@@ -52,11 +52,11 @@
             "done": false
         },
         {
-            "html": "<div class=\"pokemons\">\n    <pikachu />\n    <charmander />\n    <pikachu />\n</div>",
-            "title": "Catch 2 Pikachu",
-            "menuTitle": "7. Catch more Pikachu",
-            "pokemons": [1, 3, 1],
-            "correctAnswers": [{ "css": "pikachu", "pokemons": [1] }],
+            "html": "<div class=\"pokemons\">\n    <cage>\n        <pikachu class=\"tiny\"/>\n    </cage>\n    <pikachu />\n    <cage>\n        <pikachu class=\"tiny\" />\n    </cage>\n    <bulbasaur class=\"tiny\" />\n    <cage>\n        <pikachu />\n    </cage>\n</div>",
+            "title": "Free all tiny Pikachu in cages",
+            "menuTitle": "7. Free all tinys'",
+            "pokemons": [7, 10, 11, 8, 11],
+            "correctAnswers": [{ "css": "cage pikachu.tiny", "pokemons": [11] }],
             "done": false
         },
         {
