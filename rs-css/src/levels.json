@@ -71,11 +71,11 @@
             "done": false
         },
         {
-            "html": "<div class=\"pokemons\">\n    <pikachu />\n    <charmander />\n    <pikachu />\n</div>",
-            "title": "Catch 2 Pikachu",
-            "menuTitle": "9. Catch more Pikachu",
-            "pokemons": [1, 3, 1],
-            "correctAnswers": [{ "css": "pikachu", "pokemons": [1] }],
+            "html": "<div class=\"pokemons\">\n    <bulbasaur />\n    <charmander />\n    <squirtle />\n</div>",
+            "title": "Catch first pokemon",
+            "menuTitle": "9. Cath first",
+            "pokemons": [2, 3, 4],
+            "correctAnswers": [{ "css": "pokemons:first-child", "pokemons": [2] }],
             "done": false
         },
         {
