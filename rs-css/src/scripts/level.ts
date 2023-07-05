@@ -54,7 +54,7 @@ export const checkAnswer = (answer: string): boolean => {
     const catchedPokemons = match?.pokemons;
     // const vanishedPokemons = level.pokemons.filter((pokemon) => !catchedPokemons?.includes(pokemon));
     // TODO animation for catched and vanished pokemons
-    if (catchedPokemons?.length !== 0) {
+    if (catchedPokemons) {
         setNextLevel();
         return true;
     }
