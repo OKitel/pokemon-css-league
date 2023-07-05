@@ -71,24 +71,26 @@
             "done": false
         },
         {
-            "html": "<div class=\"pokemons\">\n    <bulbasaur />\n    <charmander />\n    <squirtle />\n</div>",
+            "html": "<div class=\"pokemons\">\n    <bulbasaur />\n    <charmander />\n    <bulbasaur />\n    <squirtle />\n</div>",
             "title": "Catch first pokemon",
             "menuTitle": "9. Cath first",
-            "pokemons": [2, 3, 4],
+            "pokemons": [14, 3, 2, 4],
             "correctAnswers": [
-                { "css": "pokemons:first-child", "pokemons": [2] },
-                { "css": "bulbasaur", "pokemons": [2] }
+                { "css": ".pokemons bulbasaur:first-child", "pokemons": [14] },
+                { "css": "bulbasaur:first-child", "pokemons": [14] },
+                { "css": "div bulbasaur:first-child", "pokemons": [14] }
             ],
             "done": false
         },
         {
-            "html": "<div class=\"pokemons\">\n    <squirtle />\n    <charmander />\n    <bulbasaur />\n    <pikachu />\n</div>",
+            "html": "<div class=\"pokemons\">\n    <pikachu />\n    <charmander />\n    <bulbasaur />\n    <pikachu />\n</div>",
             "title": "Catch last pokemon",
             "menuTitle": "10. Catch lasts",
-            "pokemons": [4, 3, 2, 1],
+            "pokemons": [1, 3, 2, 13],
             "correctAnswers": [
-                { "css": "pokemons:last-child", "pokemons": [1] },
-                { "css": "pikachu", "pokemons": [1] }
+                { "css": ".pokemons pikachu:last-child", "pokemons": [13] },
+                { "css": "pikachu:last-child", "pokemons": [13] },
+                { "css": "div pikachu:last-child", "pokemons": [13] }
             ],
             "done": false
         }

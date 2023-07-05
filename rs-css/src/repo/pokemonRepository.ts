@@ -84,6 +84,18 @@ const tinySquirtle = new Pokemon({
     attrClass: 'tiny',
 });
 
+const clonePikachu = new Pokemon({
+    id: 13,
+    name: 'pikachu',
+    src: pikachuImage as string,
+});
+
+const cloneBulbasaur = new Pokemon({
+    id: 14,
+    name: 'bulbasaur',
+    src: bulbasaurImage as string,
+});
+
 const dataBase = [
     pikachu,
     bulbasaur,
@@ -97,6 +109,8 @@ const dataBase = [
     tinyPikachu,
     tinyCagedPikachu,
     tinySquirtle,
+    clonePikachu,
+    cloneBulbasaur,
 ];
 
 export const getPokemonById = (id: number): Pokemon | undefined => {
