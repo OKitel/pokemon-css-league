@@ -49,7 +49,14 @@ const cagedPikachu = new Pokemon({
     src: pikachuInTheCage as string,
 });
 
-const dataBase = [pikachu, bulbasaur, charmander, squirtle, lapras, shinyCharmander, cagedPikachu];
+const tinyBulbasaur = new Pokemon({
+    id: 8,
+    name: 'bulbasaur',
+    src: bulbasaurImage as string,
+    attrClass: 'tiny',
+});
+
+const dataBase = [pikachu, bulbasaur, charmander, squirtle, lapras, shinyCharmander, cagedPikachu, tinyBulbasaur];
 
 export const getPokemonById = (id: number): Pokemon | undefined => {
     return dataBase.find((pokemon) => pokemon.id === id);
