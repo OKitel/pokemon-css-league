@@ -7,6 +7,7 @@ const createMenu = (): HTMLElement => {
     menuContainerDiv.className = 'menu-container';
     const nav = document.createElement('nav');
     const h3 = document.createElement('h3');
+    h3.className = 'menu-title';
     h3.textContent = 'Choose a level';
     const ul = document.createElement('ul');
     ul.className = 'nav-links menu';
