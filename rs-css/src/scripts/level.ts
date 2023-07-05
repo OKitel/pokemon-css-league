@@ -37,6 +37,13 @@ export const getCurrentLevel = (): Level => {
 
 export const setLevel = (level: number): void => {
     if (level <= levels.length) {
+        const menuLinks = document.querySelectorAll('.nav-links__item');
+        if (menuLinks) {
+            menuLinks.forEach((link) => {
+                link.classList.remove('nav-links__item-active');
+            });
+            menuLinks[level].classList.add('nav-links__item-active');
+        }
         localStorage.setItem('level', `${level}`);
         const l = levels[level];
         render(l);
@@ -66,6 +73,7 @@ export const checkAnswer = (answer: string): boolean => {
                 }
             }
         });
+        level.done = true;
         setTimeout(() => setNextLevel(), 4000);
         return true;
     }

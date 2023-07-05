@@ -1,5 +1,7 @@
 import { levels, setLevel } from './level';
 
+const MARK_EMOJI = '✔️';
+
 const createMenu = (): HTMLElement => {
     const overlayDiv = document.createElement('div');
     overlayDiv.className = 'overlay';
@@ -12,11 +14,12 @@ const createMenu = (): HTMLElement => {
     const ul = document.createElement('ul');
     ul.className = 'nav-links menu';
 
-    levels.forEach(({ menuTitle }, index) => {
+    levels.forEach(({ menuTitle, done }, index) => {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.className = 'nav-links__item';
-        a.textContent = menuTitle;
+        const mark = done ? MARK_EMOJI : '';
+        a.textContent = `${menuTitle} ${mark}`;
         a.addEventListener('click', () => {
             setLevel(index);
         });
@@ -39,8 +42,6 @@ const initMenu = (): void => {
     const overlay = document.querySelector('.overlay') as HTMLDivElement;
     const burger = document.querySelector('.burger') as HTMLDivElement;
     if (adaptMenu) {
-        const menuLinks = adaptMenu.querySelectorAll('.nav-links__item');
-        let activeLink = adaptMenu.querySelector('.nav-links__item-active');
         const menuLinksArray = Array.from(adaptMenu.querySelectorAll('.nav-links__item'));
         const handleMenu = (event: MouseEvent): void => {
             const clickedElement = event.target as HTMLElement;
@@ -61,13 +62,6 @@ const initMenu = (): void => {
                     body.classList.toggle('body-overflow');
                 }
             }
-            menuLinks.forEach((link) => {
-                link.addEventListener('click', () => {
-                    if (activeLink) activeLink.classList.remove('nav-links__item-active');
-                    link.classList.add('nav-links__item-active');
-                    activeLink = link;
-                });
-            });
         };
         if (burger) burger.addEventListener('click', handleMenu);
         if (overlay) overlay.addEventListener('click', handleMenu);
