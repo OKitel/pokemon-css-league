@@ -5,6 +5,7 @@ import squirtleImage from '../assets/squirtle.png';
 import laprasImage from '../assets/lapras.png';
 import Pokemon from '../types/pokemon';
 import shinyCharmanderImage from '../assets/shiny-charmander.png';
+import pikachuInTheCage from '../assets/sad-pikachu.png';
 
 const pikachu = new Pokemon({
     id: 1,
@@ -42,7 +43,13 @@ const shinyCharmander = new Pokemon({
     src: shinyCharmanderImage as string,
 });
 
-const dataBase = [pikachu, bulbasaur, charmander, squirtle, lapras, shinyCharmander];
+const cagedPikachu = new Pokemon({
+    id: 7,
+    name: 'pikachu',
+    src: pikachuInTheCage as string,
+});
+
+const dataBase = [pikachu, bulbasaur, charmander, squirtle, lapras, shinyCharmander, cagedPikachu];
 
 export const getPokemonById = (id: number): Pokemon | undefined => {
     return dataBase.find((pokemon) => pokemon.id === id);
