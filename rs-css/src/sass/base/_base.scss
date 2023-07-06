@@ -28,3 +28,17 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.btn {
+  border: 2px solid $color-dark;
+  border-radius: 1rem;
+  background-color: transparent;
+  @extend %transition;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.btn:hover {
+  background-color: $color-dark;
+  color: $color-light;
+}

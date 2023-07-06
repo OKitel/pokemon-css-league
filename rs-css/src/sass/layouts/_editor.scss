@@ -16,6 +16,7 @@
 #css-editor,
 #html-viewer {
   flex: 1 1 50%;
+  position: relative;
 }
 
 .cm-editor {
@@ -52,4 +53,12 @@
 
 .shake {
   animation: shakeEditor 0.5s infinite;
+}
+
+.enter-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 8rem;
+  height: 3rem;
 }
