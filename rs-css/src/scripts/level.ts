@@ -7,6 +7,7 @@ import render from './render';
 import createPokeball from './pokeball';
 import finishImage from '../assets/finish.png';
 import { shakeEditor } from './editor';
+import createMain from './main';
 
 const jsonData = dataBase as LevelsData;
 
@@ -45,6 +46,16 @@ const showFinish = (): void => {
         finishImg.src = finishImage as string;
         finishImg.className = 'finish';
         main.appendChild(finishImg);
+
+        setTimeout(() => {
+            const parent = main.parentElement;
+            const newMain = createMain();
+            if (parent) {
+                parent.replaceChild(newMain, main);
+            }
+
+            render(levels[0]);
+        }, 3000);
     }
 };
 
