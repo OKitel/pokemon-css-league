@@ -20,7 +20,7 @@ const keysMap = keymap.of([
 
 export const initCssEditor = (parent: HTMLElement): void => {
     const view = new EditorView({
-        extensions: [keysMap, basicSetup, css(), placeholder(`Type your css here and hit Enter...`)],
+        extensions: [keysMap, basicSetup, css(), placeholder(`Type your CSS here and hit Enter`)],
         parent,
     });
 };
