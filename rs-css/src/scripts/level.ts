@@ -5,6 +5,7 @@ import Pokemon from '../types/pokemon';
 import * as dataBase from '../levels.json';
 import render from './render';
 import createPokeball from './pokeball';
+import finishImage from '../assets/finish.png';
 
 const jsonData = dataBase as LevelsData;
 
@@ -35,11 +36,24 @@ export const getCurrentLevel = (): Level => {
     return level;
 };
 
+const showFinish = (): void => {
+    const main = document.querySelector('.main');
+    if (main) {
+        main.innerHTML = '';
+        const finishImg = document.createElement('img');
+        finishImg.src = finishImage as string;
+        finishImg.className = 'finish';
+        main.appendChild(finishImg);
+    }
+};
+
 export const setLevel = (level: number): void => {
-    if (level <= levels.length) {
+    if (level < levels.length) {
         localStorage.setItem('level', `${level}`);
         const l = levels[level];
         render(l);
+    } else {
+        showFinish();
     }
 };
 

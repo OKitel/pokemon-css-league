@@ -25,6 +25,10 @@
     shake 1.25s cubic-bezier(.36, .07, .19, .97) 3;
 }
 
+.finish {
+  animation: activeAnimation 1s infinite ease-in-out;
+}
+
 .pokeball::before,
 .pokeball::after {
   content: "";
