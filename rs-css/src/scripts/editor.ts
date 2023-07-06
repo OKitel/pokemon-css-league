@@ -18,11 +18,18 @@ const keysMap = keymap.of([
     },
 ]);
 
+let cssEditorView: EditorView;
+
 export const initCssEditor = (parent: HTMLElement): void => {
-    const view = new EditorView({
+    cssEditorView = new EditorView({
         extensions: [keysMap, basicSetup, css(), placeholder(`Type your CSS here and hit Enter`)],
         parent,
     });
+};
+
+export const getEditorValue = (): string => {
+    const value = cssEditorView.state.doc.toString();
+    return value;
 };
 
 export const initHtmlEditor = (parent: HTMLElement, htmlDescription: string): void => {

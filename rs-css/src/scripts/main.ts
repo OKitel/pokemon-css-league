@@ -1,3 +1,4 @@
+import { getEditorValue } from './editor';
 import { checkAnswer } from './level';
 
 // eslint-disable-next-line max-lines-per-function
@@ -17,7 +18,7 @@ const createMain = (): HTMLElement => {
     enterBtn.className = 'enter-btn btn';
     enterBtn.textContent = 'Enter';
     enterBtn.addEventListener('click', () => {
-        const userAnswer = '';
+        const userAnswer = getEditorValue();
         checkAnswer(userAnswer);
     });
 

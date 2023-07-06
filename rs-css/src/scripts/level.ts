@@ -53,7 +53,6 @@ const showFinish = (): void => {
             if (parent) {
                 parent.replaceChild(newMain, main);
             }
-
             render(levels[0]);
         }, 3000);
     }
