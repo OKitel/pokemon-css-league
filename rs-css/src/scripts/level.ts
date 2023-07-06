@@ -6,6 +6,7 @@ import * as dataBase from '../levels.json';
 import render from './render';
 import createPokeball from './pokeball';
 import finishImage from '../assets/finish.png';
+import { shakeEditor } from './editor';
 
 const jsonData = dataBase as LevelsData;
 
@@ -68,8 +69,7 @@ export const checkAnswer = (answer: string): boolean => {
     const { correctAnswers } = level;
     const match = correctAnswers.find((ans) => ans.css === answer.trim());
     const catchedPokemons = match?.pokemons;
-    // const vanishedPokemons = level.pokemons.filter((pokemon) => !catchedPokemons?.includes(pokemon));
-    // TODO animation for vanished pokemons
+    const vanishedPokemons = level.pokemons.filter((pokemon) => !catchedPokemons?.includes(pokemon));
     if (catchedPokemons) {
         const activeImages = document.querySelectorAll('.active-image');
         activeImages.forEach((img) => {
@@ -82,8 +82,11 @@ export const checkAnswer = (answer: string): boolean => {
             }
         });
         level.done = true;
-        setTimeout(() => setNextLevel(), 4000);
+        setTimeout(() => setNextLevel(), 3000);
         return true;
+    }
+    if (vanishedPokemons) {
+        shakeEditor();
     }
     return false;
 };

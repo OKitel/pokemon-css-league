@@ -22,7 +22,7 @@
   overflow: hidden;
   box-shadow: inset -10px 10px 0 10px #ccc;
   animation: fall .25s ease-in-out,
-    shake 1.25s cubic-bezier(.36, .07, .19, .97) 3;
+    shake 1.25s cubic-bezier(.36, .07, .19, .97) 2;
 }
 
 .finish {
@@ -59,7 +59,7 @@
   border-radius: 50%;
   z-index: 10;
   box-shadow: 0 0 0 10px black;
-  animation: blink .5s alternate 7;
+  animation: blink .5s alternate 5;
 }
 
 /* Animation */

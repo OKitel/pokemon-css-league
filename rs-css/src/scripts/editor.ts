@@ -32,3 +32,13 @@ export const initHtmlEditor = (parent: HTMLElement, htmlDescription: string): vo
         parent,
     });
 };
+
+export const shakeEditor = (): void => {
+    const editorField = document.querySelector('.editor');
+    if (editorField) {
+        editorField.classList.add('shake');
+        setTimeout(() => {
+            editorField.classList.remove('shake');
+        }, 500);
+    }
+};
