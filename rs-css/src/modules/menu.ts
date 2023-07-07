@@ -47,7 +47,6 @@ const createMenu = (): HTMLElement => {
     return overlayDiv;
 };
 
-// eslint-disable-next-line max-lines-per-function
 const initMenu = (): void => {
     const root = document.getElementById('root');
     if (root) root.appendChild(createMenu());
