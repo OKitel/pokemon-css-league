@@ -22,7 +22,7 @@ export const createUl = (): HTMLElement => {
     return ul;
 };
 
-const createMenu = (): HTMLElement => {
+export const createMenu = (): HTMLElement => {
     const overlayDiv = document.createElement('div');
     overlayDiv.className = 'overlay';
     const menuContainerDiv = document.createElement('div');
@@ -47,7 +47,7 @@ const createMenu = (): HTMLElement => {
     return overlayDiv;
 };
 
-const initMenu = (): void => {
+export const initMenu = (): void => {
     const root = document.getElementById('root');
     if (root) root.appendChild(createMenu());
     const { body } = document;
@@ -80,5 +80,3 @@ const initMenu = (): void => {
         if (overlay) overlay.addEventListener('click', handleMenu);
     }
 };
-
-export default initMenu;

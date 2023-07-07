@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import { createHeaderView } from '../modules/header';
 
 describe('test header module', () => {

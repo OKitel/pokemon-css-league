@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import createFooterView from '../modules/footer';
 
 describe('test footer module', () => {
