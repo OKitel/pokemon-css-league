@@ -24,19 +24,6 @@ class Pokemon implements IPokemon {
         this.attrId = p.attrId;
         this.attrClass = p.attrClass;
     }
-
-    public tooltip(): string {
-        if (this.attrId) {
-            if (this.attrClass) {
-                return `<${this.name} ${this.attrId} ${this.attrClass}/>`;
-            }
-            return `<${this.name} ${this.attrId} />`;
-        }
-        if (this.attrClass) {
-            return `<${this.name} ${this.attrClass}/>`;
-        }
-        return `<${this.name} />`;
-    }
 }
 
 export default Pokemon;

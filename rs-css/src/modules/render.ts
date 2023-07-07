@@ -3,7 +3,10 @@ import Pokemon from '../types/pokemon';
 import { initCssEditor, initHtmlEditor } from './editor';
 import { createUl } from './menu';
 
-const renderTitle = (level: Level): void => {
+type RenderFunctionWithLevel = <T extends Level>(level: T) => void;
+type RenderFunction = () => void;
+
+const renderTitle: RenderFunctionWithLevel = (level: Level): void => {
     const title = document.querySelector('.task-title');
     if (title instanceof HTMLElement) {
         title.innerText = level.title;
@@ -18,7 +21,7 @@ const renderTitle = (level: Level): void => {
     }
 };
 
-const renderCssViewer = (): void => {
+const renderCssViewer: RenderFunction = (): void => {
     const editorField = document.querySelector<HTMLElement>('.editor');
     if (editorField) {
         const cssEditorField = document.querySelector('.css-viewer__container');
@@ -29,7 +32,7 @@ const renderCssViewer = (): void => {
     }
 };
 
-const renderHtmlViewer = (level: Level): void => {
+const renderHtmlViewer: RenderFunctionWithLevel = (level: Level): void => {
     const htmlViewerField = document.querySelector('.html-viewer__container');
     if (htmlViewerField instanceof HTMLElement) {
         htmlViewerField.innerHTML = '';
@@ -37,7 +40,7 @@ const renderHtmlViewer = (level: Level): void => {
     }
 };
 
-const renderPokemons = (level: Level): void => {
+const renderPokemons: RenderFunctionWithLevel = (level: Level): void => {
     const pokemonsField = document.querySelector('.pokemons');
     const correctPokemonIds = level.correctAnswers.flatMap((ans) => ans.pokemons.map((p) => p.id));
     if (pokemonsField) {
@@ -59,7 +62,7 @@ const renderPokemons = (level: Level): void => {
     }
 };
 
-const renderMenu = (): void => {
+const renderMenu: RenderFunction = (): void => {
     const navLinks = document.querySelector('.nav-links');
     const ul = createUl();
     if (navLinks) {
@@ -78,7 +81,7 @@ const renderMenu = (): void => {
     }
 };
 
-const render = (level: Level): void => {
+const render: RenderFunctionWithLevel = (level: Level): void => {
     renderTitle(level);
     renderCssViewer();
     renderHtmlViewer(level);
