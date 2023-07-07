@@ -1,19 +1,17 @@
 import { getEditorValue } from './editor';
 import { checkAnswer } from './level';
 
-// eslint-disable-next-line max-lines-per-function
-const createMain = (): HTMLElement => {
-    const main = document.createElement('main');
-    main.className = 'main';
-    const editorDiv = document.createElement('div');
-    editorDiv.className = 'editor';
+const createCssEditorView = (): HTMLElement => {
     const cssEditorDiv = document.createElement('div');
     cssEditorDiv.id = 'css-editor';
+
     const cssEditorHeader = document.createElement('h3');
     cssEditorHeader.className = 'editor__header';
     cssEditorHeader.textContent = 'CSS Editor';
+
     const cssViewerContainer = document.createElement('div');
     cssViewerContainer.className = 'css-viewer__container';
+
     const enterBtn = document.createElement('button');
     enterBtn.className = 'enter-btn btn';
     enterBtn.textContent = 'Enter';
@@ -26,8 +24,13 @@ const createMain = (): HTMLElement => {
     cssEditorDiv.appendChild(cssViewerContainer);
     cssEditorDiv.appendChild(enterBtn);
 
+    return cssEditorDiv;
+};
+
+const createHtmlEditorView = (): HTMLElement => {
     const htmlViewerDiv = document.createElement('div');
     htmlViewerDiv.id = 'html-viewer';
+
     const htmlViewerHeader = document.createElement('h3');
     htmlViewerHeader.className = 'editor__header';
     htmlViewerHeader.textContent = 'HTML Viewer';
@@ -37,6 +40,18 @@ const createMain = (): HTMLElement => {
 
     htmlViewerDiv.appendChild(htmlViewerHeader);
     htmlViewerDiv.appendChild(htmlViewerContainer);
+
+    return htmlViewerDiv;
+};
+
+const createMainView = (): HTMLElement => {
+    const main = document.createElement('main');
+    main.className = 'main';
+    const editorDiv = document.createElement('div');
+    editorDiv.className = 'editor';
+
+    const cssEditorDiv = createCssEditorView();
+    const htmlViewerDiv = createHtmlEditorView();
 
     editorDiv.appendChild(cssEditorDiv);
     editorDiv.appendChild(htmlViewerDiv);
@@ -50,4 +65,4 @@ const createMain = (): HTMLElement => {
     return main;
 };
 
-export default createMain;
+export default createMainView;

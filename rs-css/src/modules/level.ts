@@ -7,7 +7,7 @@ import render from './render';
 import createPokeball from './pokeball';
 import finishImage from '../assets/finish.png';
 import { shakeEditor } from './editor';
-import createMain from './main';
+import createMainView from './main';
 
 const jsonData = dataBase as LevelsData;
 
@@ -49,7 +49,7 @@ const showFinish = (): void => {
 
         setTimeout(() => {
             const parent = main.parentElement;
-            const newMain = createMain();
+            const newMain = createMainView();
             if (parent) {
                 parent.replaceChild(newMain, main);
             }

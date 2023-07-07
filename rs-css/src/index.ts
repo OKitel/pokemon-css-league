@@ -3,7 +3,7 @@ import initMenu from './modules/menu';
 import initModal from './modules/modal';
 import createHeader from './modules/header';
 import createFooter from './modules/footer';
-import createMain from './modules/main';
+import createMainView from './modules/main';
 import { getCurrentLevel } from './modules/level';
 import render from './modules/render';
 
@@ -16,7 +16,7 @@ const createView = (): void => {
     const header = createHeader();
     container.appendChild(header);
 
-    const main = createMain();
+    const main = createMainView();
     const footer = createFooter();
 
     const backgroundContainer = document.createElement('div');
