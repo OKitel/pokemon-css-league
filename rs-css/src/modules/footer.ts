@@ -1,4 +1,4 @@
-const createFooter = (): HTMLElement => {
+const createFooterView = (): HTMLElement => {
     const footer = document.createElement('footer');
     footer.className = 'footer';
 
@@ -33,4 +33,4 @@ const createFooter = (): HTMLElement => {
     return footer;
 };
 
-export default createFooter;
+export default createFooterView;

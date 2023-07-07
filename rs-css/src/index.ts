@@ -2,7 +2,7 @@ import './sass/styles.scss';
 import initMenu from './modules/menu';
 import initModal from './modules/modal';
 import createHeader from './modules/header';
-import createFooter from './modules/footer';
+import createFooterView from './modules/footer';
 import createMainView from './modules/main';
 import { getCurrentLevel } from './modules/level';
 import render from './modules/render';
@@ -17,7 +17,7 @@ const createView = (): void => {
     container.appendChild(header);
 
     const main = createMainView();
-    const footer = createFooter();
+    const footer = createFooterView();
 
     const backgroundContainer = document.createElement('div');
     backgroundContainer.className = 'background';
