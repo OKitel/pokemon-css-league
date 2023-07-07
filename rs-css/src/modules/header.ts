@@ -1,4 +1,4 @@
-const createHeader = (): HTMLElement => {
+const createHeaderView = (): HTMLElement => {
     const header = document.createElement('header');
     header.className = 'header';
 
@@ -32,4 +32,4 @@ const createHeader = (): HTMLElement => {
     return header;
 };
 
-export default createHeader;
+export default createHeaderView;

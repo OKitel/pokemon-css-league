@@ -1,7 +1,7 @@
 import './sass/styles.scss';
 import initMenu from './modules/menu';
 import initModal from './modules/modal';
-import createHeader from './modules/header';
+import createHeaderView from './modules/header';
 import createFooterView from './modules/footer';
 import createMainView from './modules/main';
 import { getCurrentLevel } from './modules/level';
@@ -13,7 +13,7 @@ const createView = (): void => {
     const container = document.createElement('div');
     container.classList.add('container');
 
-    const header = createHeader();
+    const header = createHeaderView();
     container.appendChild(header);
 
     const main = createMainView();
