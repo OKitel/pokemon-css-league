@@ -4,7 +4,7 @@ import { Answer } from '../types/answer';
 import Pokemon from '../types/pokemon';
 import * as dataBase from '../levels.json';
 import render from './render';
-import createPokeball from './pokeball';
+import createPokeballView from './pokeball';
 import finishImage from '../assets/finish.png';
 import { shakeEditor } from './editor';
 import createMainView from './main';
@@ -85,7 +85,7 @@ export const checkAnswer = (answer: string): boolean => {
         activeImages.forEach((img) => {
             if (img) {
                 const parent = img.parentElement;
-                const pokeball = createPokeball();
+                const pokeball = createPokeballView();
                 if (parent) {
                     parent.replaceChild(pokeball, img);
                 }

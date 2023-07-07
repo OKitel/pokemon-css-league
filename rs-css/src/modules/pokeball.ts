@@ -1,4 +1,4 @@
-const createPokeball = (): HTMLElement => {
+const createPokeballView = (): HTMLElement => {
     const container = document.createElement('div');
     container.className = 'pokeball__container';
 
@@ -15,4 +15,4 @@ const createPokeball = (): HTMLElement => {
     return container;
 };
 
-export default createPokeball;
+export default createPokeballView;

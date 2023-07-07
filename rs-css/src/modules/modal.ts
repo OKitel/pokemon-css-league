@@ -41,7 +41,7 @@ const createModalContentInfo = (): HTMLElement => {
     return modalContentInfoDiv;
 };
 
-const createModal = (): HTMLElement => {
+const createModalView = (): HTMLElement => {
     const overlayModalDiv = document.createElement('div');
     overlayModalDiv.className = 'overlay-modal';
 
@@ -77,7 +77,7 @@ const createModal = (): HTMLElement => {
 const initModal = (): void => {
     const root = document.getElementById('root');
 
-    if (root) root.appendChild(createModal());
+    if (root) root.appendChild(createModalView());
 
     const { body } = document;
     const modalBtn = document.querySelector('.modal-btn') as HTMLButtonElement;
