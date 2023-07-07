@@ -1,11 +1,11 @@
 import './sass/styles.scss';
-import initMenu from './scripts/menu';
-import initModal from './scripts/modal';
-import createHeader from './scripts/header';
-import createFooter from './scripts/footer';
-import createMain from './scripts/main';
-import { getCurrentLevel } from './scripts/level';
-import render from './scripts/render';
+import initMenu from './modules/menu';
+import initModal from './modules/modal';
+import createHeader from './modules/header';
+import createFooter from './modules/footer';
+import createMain from './modules/main';
+import { getCurrentLevel } from './modules/level';
+import render from './modules/render';
 
 const createView = (): void => {
     const root = document.getElementById('root');
