@@ -11,7 +11,7 @@ export const createLogoWithLink = (): HTMLElement => {
     return link;
 };
 
-const createHeaderView = (): HTMLElement => {
+export const createHeaderView = (): HTMLElement => {
     const header = document.createElement('header');
     header.className = 'header';
 
@@ -36,5 +36,3 @@ const createHeaderView = (): HTMLElement => {
 
     return header;
 };
-
-export default createHeaderView;

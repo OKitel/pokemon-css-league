@@ -1,7 +1,7 @@
 import './sass/styles.scss';
 import initMenu from './modules/menu';
 import initModal from './modules/modal';
-import createHeaderView from './modules/header';
+import { createHeaderView } from './modules/header';
 import createFooterView from './modules/footer';
 import createMainView from './modules/main';
 import { getCurrentLevel } from './modules/level';
