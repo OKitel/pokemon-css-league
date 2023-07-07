@@ -1,7 +1,4 @@
-const createHeaderView = (): HTMLElement => {
-    const header = document.createElement('header');
-    header.className = 'header';
-
+export const createLogoWithLink = (): HTMLElement => {
     const link = document.createElement('a');
     link.className = 'header__link';
     link.href = 'https://www.pokemon.com/us';
@@ -11,6 +8,14 @@ const createHeaderView = (): HTMLElement => {
     logo.className = 'header__logo';
 
     link.appendChild(logo);
+    return link;
+};
+
+const createHeaderView = (): HTMLElement => {
+    const header = document.createElement('header');
+    header.className = 'header';
+
+    const link = createLogoWithLink();
 
     const title = document.createElement('h1');
     title.className = 'header__title';
