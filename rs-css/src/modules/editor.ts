@@ -32,12 +32,15 @@ export const getEditorValue = (): string => {
     return value;
 };
 
-export const initHtmlEditor = (parent: HTMLElement, htmlDescription: string): void => {
-    const view = new EditorView({
+let htmlEditorView: EditorView;
+
+export const initHtmlEditor = (parent: HTMLElement, htmlDescription: string): EditorView => {
+    htmlEditorView = new EditorView({
         doc: htmlDescription,
         extensions: [basicSetup, html()],
         parent,
     });
+    return htmlEditorView;
 };
 
 export const shakeEditor = (): void => {
