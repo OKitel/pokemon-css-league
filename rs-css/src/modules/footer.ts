@@ -1,10 +1,12 @@
+import { GITHUB_LINK, RSS_LINK } from '../consts';
+
 const createFooterView = (): HTMLElement => {
     const footer = document.createElement('footer');
     footer.className = 'footer';
 
     const githubLink = document.createElement('a');
     githubLink.className = 'footer__link';
-    githubLink.href = 'https://github.com/OKitel';
+    githubLink.href = GITHUB_LINK;
     githubLink.target = '_blank';
 
     const githubIcon = document.createElement('div');
@@ -18,7 +20,7 @@ const createFooterView = (): HTMLElement => {
 
     const rssLink = document.createElement('a');
     rssLink.className = 'footer__link';
-    rssLink.href = 'https://rs.school/js/';
+    rssLink.href = RSS_LINK;
     rssLink.target = '_blank';
 
     const rssIcon = document.createElement('div');

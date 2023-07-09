@@ -1,7 +1,9 @@
+import { POKEMON_COM_LINK } from '../consts';
+
 export const createLogoWithLink = (): HTMLElement => {
     const link = document.createElement('a');
     link.className = 'header__link';
-    link.href = 'https://www.pokemon.com/us';
+    link.href = POKEMON_COM_LINK;
     link.target = '_blank';
 
     const logo = document.createElement('div');
