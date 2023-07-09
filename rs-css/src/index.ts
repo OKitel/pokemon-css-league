@@ -8,18 +8,18 @@ import { getCurrentLevel } from './modules/level';
 import render from './modules/render';
 
 const createView = (): void => {
-    const root = document.getElementById('root');
+    const root: HTMLElement | null = document.getElementById('root');
 
-    const container = document.createElement('div');
+    const container: HTMLDivElement = document.createElement('div');
     container.classList.add('container');
 
-    const header = createHeaderView();
+    const header: HTMLElement = createHeaderView();
     container.appendChild(header);
 
-    const main = createMainView();
-    const footer = createFooterView();
+    const main: HTMLElement = createMainView();
+    const footer: HTMLElement = createFooterView();
 
-    const backgroundContainer = document.createElement('div');
+    const backgroundContainer: HTMLDivElement = document.createElement('div');
     backgroundContainer.className = 'background';
     backgroundContainer.appendChild(main);
     backgroundContainer.appendChild(footer);
