@@ -1,11 +1,11 @@
 const createPokeballView = (): HTMLElement => {
-    const container = document.createElement('div');
+    const container: HTMLDivElement = document.createElement('div');
     container.className = 'pokeball__container';
 
-    const pokeball = document.createElement('div');
+    const pokeball: HTMLDivElement = document.createElement('div');
     pokeball.className = 'pokeball';
 
-    const pokeballButton = document.createElement('div');
+    const pokeballButton: HTMLDivElement = document.createElement('div');
     pokeballButton.className = 'pokeball__button';
 
     pokeball.appendChild(pokeballButton);
