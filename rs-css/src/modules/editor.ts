@@ -27,10 +27,7 @@ export const initCssEditor = (parent: HTMLElement): void => {
     });
 };
 
-export const getEditorValue = (): string => {
-    const value = cssEditorView.state.doc.toString();
-    return value;
-};
+export const getEditorValue = (): string => cssEditorView.state.doc.toString();
 
 let htmlEditorView: EditorView;
 
