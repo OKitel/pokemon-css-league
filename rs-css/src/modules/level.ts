@@ -30,26 +30,26 @@ export const createLevels = (data: LevelsData): Level[] => {
     });
 };
 
-export const levels = createLevels(jsonData);
+export const levels: Level[] = createLevels(jsonData);
 
 export const getCurrentLevel = (): Level => {
-    const currentLevel = localStorage.getItem('level') || '0';
-    const level = levels[+currentLevel];
+    const currentLevel: string = localStorage.getItem('level') || '0';
+    const level: Level = levels[+currentLevel];
     return level;
 };
 
 const showFinish = (): void => {
-    const main = document.querySelector('.main');
+    const main: Element | null = document.querySelector('.main');
     if (main) {
         main.innerHTML = '';
-        const finishImg = document.createElement('img');
+        const finishImg: HTMLImageElement = document.createElement('img');
         finishImg.src = finishImage as string;
         finishImg.className = 'finish';
         main.appendChild(finishImg);
 
         setTimeout(() => {
-            const parent = main.parentElement;
-            const newMain = createMainView();
+            const parent: HTMLElement | null = main.parentElement;
+            const newMain: HTMLElement = createMainView();
             if (parent) {
                 parent.replaceChild(newMain, main);
             }
@@ -61,7 +61,7 @@ const showFinish = (): void => {
 export const setLevel = (level: number): void => {
     if (level < levels.length) {
         localStorage.setItem('level', `${level}`);
-        const l = levels[level];
+        const l: Level = levels[level];
         render(l);
     } else {
         showFinish();
@@ -69,7 +69,7 @@ export const setLevel = (level: number): void => {
 };
 
 const setNextLevel = (): void => {
-    const l = +(localStorage.getItem('level') || '0');
+    const l: number = +(localStorage.getItem('level') || '0');
     localStorage.setItem(`level ${l}`, 'done');
     setLevel(l + 1);
 };
@@ -77,15 +77,15 @@ const setNextLevel = (): void => {
 export const checkAnswer = (answer: string): boolean => {
     const level: Level = getCurrentLevel();
     const { correctAnswers } = level;
-    const match = correctAnswers.find((ans) => ans.css === answer.trim());
-    const catchedPokemons = match?.pokemons;
-    const vanishedPokemons = level.pokemons.filter((pokemon) => !catchedPokemons?.includes(pokemon));
+    const match: Answer | undefined = correctAnswers.find((ans) => ans.css === answer.trim());
+    const catchedPokemons: Pokemon[] | undefined = match?.pokemons;
+    const vanishedPokemons: Pokemon[] = level.pokemons.filter((pokemon) => !catchedPokemons?.includes(pokemon));
     if (catchedPokemons) {
-        const activeImages = document.querySelectorAll('.active-image');
+        const activeImages: NodeListOf<Element> = document.querySelectorAll('.active-image');
         activeImages.forEach((img) => {
             if (img) {
-                const parent = img.parentElement;
-                const pokeball = createPokeballView();
+                const parent: HTMLElement | null = img.parentElement;
+                const pokeball: HTMLElement = createPokeballView();
                 if (parent) {
                     parent.replaceChild(pokeball, img);
                 }
