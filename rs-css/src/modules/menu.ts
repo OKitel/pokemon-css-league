@@ -3,15 +3,15 @@ import { levels, setLevel } from './level';
 const MARK_EMOJI = '✔️';
 
 export const createUl = (): HTMLElement => {
-    const ul = document.createElement('ul');
+    const ul: HTMLUListElement = document.createElement('ul');
     ul.className = 'nav-links menu';
 
     levels.forEach(({ menuTitle }, index) => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
+        const li: HTMLLIElement = document.createElement('li');
+        const a: HTMLAnchorElement = document.createElement('a');
         a.className = 'nav-links__item';
         const done = !!localStorage.getItem(`level ${index}`);
-        const mark = done ? MARK_EMOJI : '';
+        const mark: string = done ? MARK_EMOJI : '';
         a.textContent = `${menuTitle} ${mark}`;
         a.addEventListener('click', () => {
             setLevel(index);
@@ -23,19 +23,19 @@ export const createUl = (): HTMLElement => {
 };
 
 export const createMenu = (): HTMLElement => {
-    const overlayDiv = document.createElement('div');
+    const overlayDiv: HTMLDivElement = document.createElement('div');
     overlayDiv.className = 'overlay';
-    const menuContainerDiv = document.createElement('div');
+    const menuContainerDiv: HTMLDivElement = document.createElement('div');
     menuContainerDiv.className = 'menu-container';
-    const nav = document.createElement('nav');
-    const h3 = document.createElement('h3');
+    const nav: HTMLElement = document.createElement('nav');
+    const h3: HTMLHeadingElement = document.createElement('h3');
     h3.className = 'menu-title';
     h3.textContent = 'Choose a level';
-    const ul = createUl();
+    const ul: HTMLElement = createUl();
     nav.appendChild(h3);
     nav.appendChild(ul);
     menuContainerDiv.appendChild(nav);
-    const resetBtn = document.createElement('button');
+    const resetBtn: HTMLButtonElement = document.createElement('button');
     resetBtn.textContent = 'Reset progress';
     resetBtn.className = 'reset-btn';
     resetBtn.addEventListener('click', () => {
@@ -48,10 +48,10 @@ export const createMenu = (): HTMLElement => {
 };
 
 export const initMenu = (): void => {
-    const root = document.getElementById('root');
+    const root: HTMLElement | null = document.getElementById('root');
     if (root) root.appendChild(createMenu());
     const { body } = document;
-    const adaptMenu = document.querySelector('.menu-container');
+    const adaptMenu: HTMLElement | null = document.querySelector('.menu-container');
     const overlay = document.querySelector('.overlay') as HTMLDivElement;
     const burger = document.querySelector('.burger') as HTMLDivElement;
     if (adaptMenu) {
@@ -59,9 +59,9 @@ export const initMenu = (): void => {
         const handleMenu = (event: MouseEvent): void => {
             const clickedElement = event.target as HTMLElement;
             if (clickedElement && burger && overlay) {
-                const isClickOnBar = clickedElement.closest('.burger') === burger;
+                const isClickOnBar: boolean = clickedElement.closest('.burger') === burger;
                 const isClickOutsideOfAdaptMenu = !adaptMenu.contains(clickedElement);
-                const isClickOnBurgerIcon = clickedElement === burger || isClickOnBar;
+                const isClickOnBurgerIcon: boolean = clickedElement === burger || isClickOnBar;
                 if ((isClickOutsideOfAdaptMenu && !isClickOnBurgerIcon) || menuLinksArray.includes(clickedElement)) {
                     burger.classList.remove('active');
                     overlay.classList.remove('active');
