@@ -1,30 +1,27 @@
+import { APP_DESCRIPTION, APP_INVITE_TEXT, APP_MODAL_TITLE } from '../consts';
 import pikachuImage from '../assets/pikachu.png';
 import { createLogoWithLink } from './header';
 
-const APP_DESCRIPTION =
-    "Dive into the world of Pokemon and sharpen your web styling abilities in an exciting new way. With this immersive simulator, you'll embark on a breath-catching journey where your CSS selectors are your ultimate Pokemon-catching tools!";
-const APP_INVITE_TEXT = 'Are you ready to take your CSS selector skills to the next level?';
-
 const createModalContentInfo = (): HTMLElement => {
-    const modalContentInfoDiv = document.createElement('div');
+    const modalContentInfoDiv: HTMLDivElement = document.createElement('div');
     modalContentInfoDiv.className = 'modal-content__info';
 
-    const modalContentInfoTitle = document.createElement('h3');
+    const modalContentInfoTitle: HTMLHeadingElement = document.createElement('h3');
     modalContentInfoTitle.className = 'modal-content__info-title';
-    modalContentInfoTitle.textContent = '🔥 Calling all aspiring trainers and CSS enthusiasts! 🔥';
+    modalContentInfoTitle.textContent = APP_MODAL_TITLE;
 
-    const modalContentInfoText1 = document.createElement('h4');
+    const modalContentInfoText1: HTMLHeadingElement = document.createElement('h4');
     modalContentInfoText1.className = 'modal-content__info-text';
     modalContentInfoText1.textContent = APP_DESCRIPTION;
 
-    const modalContentInfoText2 = document.createElement('h4');
+    const modalContentInfoText2: HTMLHeadingElement = document.createElement('h4');
     modalContentInfoText2.className = 'modal-content__info-text';
     modalContentInfoText2.textContent = APP_INVITE_TEXT;
 
-    const modalBtnContainerDiv = document.createElement('div');
+    const modalBtnContainerDiv: HTMLDivElement = document.createElement('div');
     modalBtnContainerDiv.className = 'modal-btn-container';
 
-    const modalBtn = document.createElement('button');
+    const modalBtn: HTMLButtonElement = document.createElement('button');
     modalBtn.className = 'modal-btn';
     modalBtn.textContent = 'Start your adventure now!';
     modalBtn.addEventListener('click', () => {
@@ -42,26 +39,26 @@ const createModalContentInfo = (): HTMLElement => {
 };
 
 const createModalView = (): HTMLElement => {
-    const overlayModalDiv = document.createElement('div');
+    const overlayModalDiv: HTMLDivElement = document.createElement('div');
     overlayModalDiv.className = 'overlay-modal';
 
-    const modalDiv = document.createElement('div');
+    const modalDiv: HTMLDivElement = document.createElement('div');
     modalDiv.className = 'modal';
 
-    const modalContentDiv = document.createElement('div');
+    const modalContentDiv: HTMLDivElement = document.createElement('div');
     modalContentDiv.className = 'modal-content';
 
-    const link = createLogoWithLink();
+    const link: HTMLElement = createLogoWithLink();
 
-    const modalContentImageDiv = document.createElement('div');
+    const modalContentImageDiv: HTMLDivElement = document.createElement('div');
     modalContentImageDiv.className = 'modal-content__image';
 
-    const modalImage = document.createElement('img');
+    const modalImage: HTMLImageElement = document.createElement('img');
     modalImage.src = pikachuImage as string;
 
     modalContentImageDiv.appendChild(modalImage);
 
-    const modalContentInfoDiv = createModalContentInfo();
+    const modalContentInfoDiv: HTMLElement = createModalContentInfo();
 
     modalContentDiv.appendChild(link);
     modalContentDiv.appendChild(modalContentImageDiv);
@@ -75,14 +72,14 @@ const createModalView = (): HTMLElement => {
 };
 
 const initModal = (): void => {
-    const root = document.getElementById('root');
+    const root: HTMLElement | null = document.getElementById('root');
 
     if (root) root.appendChild(createModalView());
 
     const { body } = document;
     const modalBtn = document.querySelector('.modal-btn') as HTMLButtonElement;
     const modal = document.querySelector('.overlay-modal') as HTMLDivElement;
-    const modalCont = document.querySelector('.modal-content');
+    const modalCont: Element | null = document.querySelector('.modal-content');
 
     if (modal && body && modalCont) {
         const openModal = (): void => {
@@ -100,7 +97,7 @@ const initModal = (): void => {
         const handleModal = (event: MouseEvent): void => {
             const clickedElement = event.target as HTMLElement;
             const isClickOutsideOfModal = !modalCont.contains(clickedElement);
-            const isClickOnModalBtn = clickedElement === modalBtn;
+            const isClickOnModalBtn: boolean = clickedElement === modalBtn;
 
             if (isClickOutsideOfModal || isClickOnModalBtn) {
                 closeModal();
