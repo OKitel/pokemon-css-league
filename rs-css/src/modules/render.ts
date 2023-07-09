@@ -7,12 +7,12 @@ type RenderFunctionWithLevel = <T extends Level>(level: T) => void;
 type RenderFunction = () => void;
 
 const renderTitle: RenderFunctionWithLevel = (level: Level): void => {
-    const title = document.querySelector('.task-title');
+    const title: Element | null = document.querySelector('.task-title');
     if (title instanceof HTMLElement) {
         title.innerText = level.title;
     } else {
-        const main = document.querySelector('.main');
-        const levelTitle = document.createElement('h2');
+        const main: HTMLElement | null = document.querySelector('.main');
+        const levelTitle: HTMLHeadingElement = document.createElement('h2');
         levelTitle.className = 'task-title';
         levelTitle.innerText = level.title;
         if (main) {
@@ -22,9 +22,9 @@ const renderTitle: RenderFunctionWithLevel = (level: Level): void => {
 };
 
 const renderCssViewer: RenderFunction = (): void => {
-    const editorField = document.querySelector<HTMLElement>('.editor');
+    const editorField: HTMLElement | null = document.querySelector<HTMLElement>('.editor');
     if (editorField) {
-        const cssEditorField = document.querySelector('.css-viewer__container');
+        const cssEditorField: HTMLElement | null = document.querySelector('.css-viewer__container');
         if (cssEditorField instanceof HTMLElement) {
             cssEditorField.innerHTML = '';
             initCssEditor(cssEditorField);
@@ -33,7 +33,7 @@ const renderCssViewer: RenderFunction = (): void => {
 };
 
 const renderHtmlViewer: RenderFunctionWithLevel = (level: Level): void => {
-    const htmlViewerField = document.querySelector('.html-viewer__container');
+    const htmlViewerField: HTMLElement | null = document.querySelector('.html-viewer__container');
     if (htmlViewerField instanceof HTMLElement) {
         htmlViewerField.innerHTML = '';
         initHtmlEditor(htmlViewerField, level.html);
@@ -41,13 +41,13 @@ const renderHtmlViewer: RenderFunctionWithLevel = (level: Level): void => {
 };
 
 const renderPokemons: RenderFunctionWithLevel = (level: Level): void => {
-    const pokemonsField = document.querySelector('.pokemons');
-    const correctPokemonIds = level.correctAnswers.flatMap((ans) => ans.pokemons.map((p) => p.id));
+    const pokemonsField: HTMLElement | null = document.querySelector('.pokemons');
+    const correctPokemonIds: number[] = level.correctAnswers.flatMap((ans) => ans.pokemons.map((p) => p.id));
     if (pokemonsField) {
         pokemonsField.innerHTML = '';
         const { pokemons } = level;
         pokemons.forEach((p: Pokemon) => {
-            const pImg = document.createElement('img');
+            const pImg: HTMLImageElement = document.createElement('img');
             pImg.src = p.src;
             pImg.classList.add('pokemon');
 
@@ -63,20 +63,20 @@ const renderPokemons: RenderFunctionWithLevel = (level: Level): void => {
 };
 
 const renderMenu: RenderFunction = (): void => {
-    const navLinks = document.querySelector('.nav-links');
-    const ul = createUl();
+    const navLinks: HTMLElement | null = document.querySelector('.nav-links');
+    const ul: HTMLElement = createUl();
     if (navLinks) {
-        const parent = navLinks.parentElement;
+        const parent: HTMLElement | null = navLinks.parentElement;
         if (parent) {
             parent.replaceChild(ul, navLinks);
         }
     }
-    const menuLinks = document.querySelectorAll('.nav-links__item');
+    const menuLinks: NodeListOf<Element> = document.querySelectorAll('.nav-links__item');
     if (menuLinks) {
         menuLinks.forEach((link) => {
             link.classList.remove('nav-links__item-active');
         });
-        const currentLevel = localStorage.getItem('level') || '0';
+        const currentLevel: string = localStorage.getItem('level') || '0';
         menuLinks[+currentLevel].classList.add('nav-links__item-active');
     }
 };
