@@ -1,12 +1,12 @@
 import { POKEMON_COM_LINK } from '../consts';
 
 export const createLogoWithLink = (): HTMLElement => {
-    const link = document.createElement('a');
+    const link: HTMLAnchorElement = document.createElement('a');
     link.className = 'header__link';
     link.href = POKEMON_COM_LINK;
     link.target = '_blank';
 
-    const logo = document.createElement('div');
+    const logo: HTMLDivElement = document.createElement('div');
     logo.className = 'header__logo';
 
     link.appendChild(logo);
@@ -14,20 +14,20 @@ export const createLogoWithLink = (): HTMLElement => {
 };
 
 export const createHeaderView = (): HTMLElement => {
-    const header = document.createElement('header');
+    const header: HTMLElement = document.createElement('header');
     header.className = 'header';
 
-    const link = createLogoWithLink();
+    const link: HTMLElement = createLogoWithLink();
 
-    const title = document.createElement('h1');
+    const title: HTMLHeadingElement = document.createElement('h1');
     title.className = 'header__title';
     title.textContent = 'CSS League';
 
-    const burger = document.createElement('div');
+    const burger: HTMLDivElement = document.createElement('div');
     burger.className = 'burger';
 
     for (let i = 0; i < 3; i += 1) {
-        const bar = document.createElement('div');
+        const bar: HTMLDivElement = document.createElement('div');
         bar.className = 'bar';
         burger.appendChild(bar);
     }
