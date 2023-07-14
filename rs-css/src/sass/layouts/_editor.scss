@@ -62,3 +62,9 @@
   width: 8rem;
   height: 3rem;
 }
+
+@media screen and (max-height: 800px) {
+  .cm-editor {
+    height: 20rem;
+  }
+}

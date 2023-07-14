@@ -21,3 +21,27 @@
 .pokemon {
   width: 20rem;
 }
+
+@media screen and (max-height: 800px) {
+  .task-title {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+
+
+  .pokemon {
+    width: 15rem;
+  }
+
+}
+
+@media screen and (max-width: 780px) {
+  .pokemon {
+    width: 10rem;
+  }
+
+  .task-title {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+}
