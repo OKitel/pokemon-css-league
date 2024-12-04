@@ -13,7 +13,6 @@ Pokemon CSS League is a fun and interactive playground designed to help you mast
 - Interactive Learning: Solve CSS selector challenges in a Pokémon-inspired environment.
 - Gamified Experience: Progress through levels, and enjoy the Pokémon theme while learning.
 - CodeMirror Integration: Provides a clean and responsive code editor for a seamless coding experience.
-- Responsive Design: Optimized for all screen sizes, including mobile, tablet, and desktop.
 
 ### 🛠️ Technologies Used
 
