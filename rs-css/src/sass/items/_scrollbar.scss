@@ -1,0 +1,21 @@
+::-webkit-scrollbar {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-light;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-sky;
+  border: .5rem solid $color-light;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darken($color-sky, 10%);
+}
+
+::-webkit-scrollbar-corner {
+  background: $color-dark;
+}
