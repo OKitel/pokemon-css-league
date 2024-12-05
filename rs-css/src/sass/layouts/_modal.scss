@@ -18,19 +18,19 @@
   }
 }
 
+.modal {
+  width: 70%;
+  height: 80vh;
+  overflow-y: scroll;
+  box-shadow: 4px 4px 10px 0px rgba(17, 16, 66, 0.5);
+}
+
 .modal-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: $color-light;
-  border-radius: 1rem;
   padding: 1rem;
-}
-
-.modal {
-  width: 70%;
-  border-radius: 1rem;
-  box-shadow: 4px 4px 10px 0px rgba(17, 16, 66, 0.5);
 }
 
 .modal-btn-container {
