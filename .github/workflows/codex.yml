@@ -42,6 +42,7 @@ jobs:
             -c model=gpt-4.1 \
             -c model_provider=github \
             -c 'model_providers.github={name="GitHub Models", base_url="https://models.github.ai/inference", env_key="GH_TOKEN", wire_api="chat"}' \
+            -c max_tokens=4000 \
             --full-auto "$INSTRUCTION"
           
           if [[ -n $(git status --porcelain) ]]; then
